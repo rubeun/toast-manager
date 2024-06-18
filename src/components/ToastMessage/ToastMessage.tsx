@@ -1,10 +1,9 @@
+import styles from "./ToastMessage.module.css";
 
 const ToastMessage = () => {
 
   return (
-    <>
-      <div className="toastMessage">Placeholder</div>
-    </>
+    <div className={styles.toastMessage}>Placeholder Message</div>
   );
 }
 
