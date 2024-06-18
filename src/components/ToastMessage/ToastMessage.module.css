@@ -1,0 +1,7 @@
+/* ToastMessage css */
+
+.toastMessage {
+  display: flex;
+  text-align: center;
+  color: green;
+}
