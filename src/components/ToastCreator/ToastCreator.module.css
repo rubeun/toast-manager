@@ -1,0 +1,13 @@
+/* ToastCreator css */
+
+.toastCreator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: white;
+}
