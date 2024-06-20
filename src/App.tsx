@@ -54,7 +54,7 @@ const App = () => {
       <header className="App-header">
         <h1>Toast Manager</h1>
         <ToastCreator />
-        <ToastMessage />
+        <ToastMessage toastMessages={toastMessages} />
       </header>
     </div>
   );
