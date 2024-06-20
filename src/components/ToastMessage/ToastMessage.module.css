@@ -41,3 +41,18 @@
   background-color: white;
 }
 
+.success {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
+}
+
+.warning {
+  background-color: yellow;
+}
+
+.info {
+  background-color: aqua;
+}
