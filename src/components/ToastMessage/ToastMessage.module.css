@@ -1,7 +1,43 @@
 /* ToastMessage css */
 
 .toastMessage {
-  display: flex;
   text-align: center;
-  color: green;
+  color: black;
+  font-size: 0.8rem;
 }
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin: 1rem 0;
+}
+
+.topLeft {
+  top: 0;
+  left: 0;
+}
+
+.topRight {
+  top: 0;
+  right: 0;
+}
+
+.bottomLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.bottomRight {
+  bottom: 0;
+  right: 0;
+}
+
+.message {
+  margin: 0.2rem 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 4px 10px #00000040;
+  background-color: white;
+}
+
