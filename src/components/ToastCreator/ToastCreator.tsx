@@ -4,6 +4,7 @@ import styles from "./ToastCreator.module.css";
 const ToastCreator = () => {
   const [horizontalPosition, setHorizontalPosition] = useState("left");
   const [verticalPosition, setVerticalPosition] = useState("top");
+  const [toastMessage, setToastMessage] = useState("");
 
   const changeHorizontalPosition = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -17,6 +18,10 @@ const ToastCreator = () => {
     setVerticalPosition(event.target.value);
   };
 
+  const changeToastMessage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setToastMessage(event.target.value);
+  };
+
 
   return (
     <div className={styles.toastCreator}>
@@ -28,7 +33,7 @@ const ToastCreator = () => {
         <option value="top">Top</option>
         <option value="bottom">Bottom</option>
       </select>
-      <input type="text" placeholder="Type message here" />
+      <input type="text" placeholder="Type message here" onChange={changeToastMessage} value={toastMessage} />
       <button>Show Toast</button>
     </div>
   );
