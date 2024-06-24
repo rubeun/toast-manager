@@ -5,6 +5,7 @@ const ToastCreator = () => {
   const [horizontalPosition, setHorizontalPosition] = useState("left");
   const [verticalPosition, setVerticalPosition] = useState("top");
   const [toastMessage, setToastMessage] = useState("");
+  const [toastDuration, setToastDuration] = useState(2);
 
   const changeHorizontalPosition = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -22,6 +23,9 @@ const ToastCreator = () => {
     setToastMessage(event.target.value);
   };
 
+  const changeToastDuration = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setToastDuration(parseInt(event.target.value));
+  };
 
   return (
     <div className={styles.toastCreator}>
@@ -34,6 +38,13 @@ const ToastCreator = () => {
         <option value="bottom">Bottom</option>
       </select>
       <input type="text" placeholder="Type message here" onChange={changeToastMessage} value={toastMessage} />
+      <input
+        type="range"
+        min={1}
+        max={20}
+        value={toastDuration}
+        onChange={changeToastDuration}
+      />
       <button>Show Toast</button>
     </div>
   );
