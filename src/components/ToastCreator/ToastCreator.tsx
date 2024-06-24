@@ -38,13 +38,16 @@ const ToastCreator = () => {
         <option value="bottom">Bottom</option>
       </select>
       <input type="text" placeholder="Type message here" onChange={changeToastMessage} value={toastMessage} />
-      <input
-        type="range"
-        min={1}
-        max={20}
-        value={toastDuration}
-        onChange={changeToastDuration}
-      />
+      <div className={styles.toastDuration}>
+        <input
+          type="range"
+          min={1}
+          max={20}
+          value={toastDuration}
+          onChange={changeToastDuration}
+        />
+        <div>{toastDuration} seconds</div>
+      </div>
       <button>Show Toast</button>
     </div>
   );
