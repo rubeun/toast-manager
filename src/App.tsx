@@ -44,16 +44,17 @@ const tempData = [
 ];
 
 const App = () => {
-  const [horizontalPosition, setHorizontalPosition] = useState("left");
-  const [verticalPosition, setVerticalPosition] = useState("top");
-  const [message, setMessage] = useState("Message");
   const [toastMessages, setToastMessages] = useState<Message[]>(tempData);
+
+  const initialiseToast = (newToast: Message, toastDuration: number) => {
+    setToastMessages((previousToastMessages) => [...previousToastMessages, newToast]);
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Toast Manager</h1>
-        <ToastCreator />
+        <ToastCreator initialiseToast={initialiseToast} />
         <ToastMessage toastMessages={toastMessages} />
       </header>
     </div>

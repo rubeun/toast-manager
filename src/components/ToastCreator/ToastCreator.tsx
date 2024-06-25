@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import type { Message } from "../../App";
 import styles from "./ToastCreator.module.css";
 
-const ToastCreator = () => {
+const ToastCreator = ({initialiseToast}:any)  => {
   const [horizontalPosition, setHorizontalPosition] = useState("left");
   const [verticalPosition, setVerticalPosition] = useState("top");
   const [toastMessage, setToastMessage] = useState("");
@@ -34,6 +35,16 @@ const ToastCreator = () => {
     setToastDuration(parseInt(event.target.value));
   };
 
+  const createToast = () => {
+    const newToast = {
+      id: Date.now(),
+      message: toastMessage,
+      position: `${verticalPosition}-${horizontalPosition}`,
+      type: toastType,
+    };
+    initialiseToast(newToast, toastDuration);
+  }
+
   return (
     <div className={styles.toastCreator}>
       <select onChange={changeHorizontalPosition} value={horizontalPosition}>
@@ -61,7 +72,7 @@ const ToastCreator = () => {
         />
         <div>{toastDuration} seconds</div>
       </div>
-      <button>Show Toast</button>
+      <button onClick={createToast}>Show Toast</button>
     </div>
   );
 }
