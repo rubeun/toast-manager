@@ -10,41 +10,8 @@ export type Message = {
   type: string;
 };
 
-const tempData = [
-  {
-    id: 0,
-    message: "Top Left Message 1",
-    position: "top-left",
-    type: "success"
-  },
-  {
-    id: 1,
-    message: "Top Right Message",
-    position: "top-right",
-    type: "error"
-  },
-  {
-    id: 2,
-    message: "Bottom Left Message",
-    position: "bottom-left",
-    type: "warning"
-  },
-  {
-    id: 3,
-    message: "Bottom Right Message",
-    position: "bottom-right",
-    type: "info"
-  },
-  {
-    id: 4,
-    message: "Top Left Message 2",
-    position: "top-left",
-    type: "info"
-  },
-];
-
 const App = () => {
-  const [toastMessages, setToastMessages] = useState<Message[]>(tempData);
+  const [toastMessages, setToastMessages] = useState<Message[]>([]);
 
   const initialiseToast = (newToast: Message, toastDuration: number) => {
     setToastMessages((previousToastMessages) => [...previousToastMessages, newToast]);
