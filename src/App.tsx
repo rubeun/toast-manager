@@ -15,6 +15,12 @@ const App = () => {
 
   const initialiseToast = (newToast: Message, toastDuration: number) => {
     setToastMessages((previousToastMessages) => [...previousToastMessages, newToast]);
+    const timer = setTimeout(() => {
+      setToastMessages((previousToastMessages) =>
+        previousToastMessages.filter((msg) => msg.id !== newToast.id),
+      );
+    }, toastDuration * 1000);
+
   }
 
   return (
