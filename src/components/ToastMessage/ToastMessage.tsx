@@ -3,6 +3,14 @@ import type { Message } from "../../App";
 
 const ToastMessage = ({ toastMessages }: {toastMessages: Message[]}) => {
 
+  const messageDiv = (messageObj: Message, index: number) => {
+    return (
+      <div className={`${styles[messageObj.type]} ${styles.message}`} key={index}>
+        {messageObj.message}
+      </div>
+    );
+  }
+
   const topLeftPositionedMessages = toastMessages.filter(
     (msg) => msg.position === "top-left",
   );
@@ -20,32 +28,16 @@ const ToastMessage = ({ toastMessages }: {toastMessages: Message[]}) => {
   return (
     <div className={styles.toastMessage}>
       <div className={`${styles.topLeft} ${styles.messages}`}>
-        {topLeftPositionedMessages.map((msg, idx) => (
-          <div className={`${styles[msg.type]} ${styles.message}`} key={idx}>
-            {msg.message}
-          </div>
-        ))}
+        {topLeftPositionedMessages.map((msg, idx) => messageDiv(msg, idx))}
       </div>
       <div className={`${styles.topRight} ${styles.messages}`}>
-        {topRightPositionedMessages.map((msg, idx) => (
-          <div className={`${styles[msg.type]} ${styles.message}`} key={idx}>
-            {msg.message}
-          </div>
-        ))}
+        {topRightPositionedMessages.map((msg, idx) => messageDiv(msg, idx))}
       </div>
       <div className={`${styles.bottomLeft} ${styles.messages}`}>
-        {bottomLeftPositionedMessages.map((msg, idx) => (
-          <div className={`${styles[msg.type]} ${styles.message}`} key={idx}>
-            {msg.message}
-          </div>
-        ))}
+        {bottomLeftPositionedMessages.map((msg, idx) => messageDiv(msg, idx))}
       </div>
       <div className={`${styles.bottomRight} ${styles.messages}`}>
-        {bottomRightPositionedMessages.map((msg, idx) => (
-          <div className={`${styles[msg.type]} ${styles.message}`} key={idx}>
-            {msg.message}
-          </div>
-        ))}
+        {bottomRightPositionedMessages.map((msg, idx) => messageDiv(msg, idx))}
       </div>      
     </div>
   );
