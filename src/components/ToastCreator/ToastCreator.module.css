@@ -10,10 +10,32 @@
   border: 1px solid black;
   border-radius: 1rem;
   background-color: white;
+  color: black;
+}
+
+.toastCreatorOptions h5{
+  margin: 0;
 }
 
 .toastDuration {
   color: black;
   font-size: 0.8rem;
   padding-top: 0;
+}
+
+.toastButton {
+  all: unset;
+  border-radius: 6px;
+  padding: 0.5rem 2rem;
+  background-color: #6262ff;
+  color: white;
+  cursor: pointer;
+}
+
+.toastButton:hover {
+  background-color: #8d8dfa;
+}
+
+.toastButton:active {
+  background-color: #3535ff;
 }

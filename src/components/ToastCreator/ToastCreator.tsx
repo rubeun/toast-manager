@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import type { Message } from "../../App";
 import styles from "./ToastCreator.module.css";
 
-const ToastCreator = ({initialiseToast}:any)  => {
+const ToastCreator = ({ initialiseToast }:any)  => {
   const [horizontalPosition, setHorizontalPosition] = useState("left");
   const [verticalPosition, setVerticalPosition] = useState("top");
   const [toastMessage, setToastMessage] = useState("");
@@ -47,22 +46,32 @@ const ToastCreator = ({initialiseToast}:any)  => {
 
   return (
     <div className={styles.toastCreator}>
-      <select onChange={changeHorizontalPosition} value={horizontalPosition}>
-        <option value="left">Left</option>
-        <option value="right">Right</option>
-      </select>
-      <select onChange={changeVerticalPosition} value={verticalPosition}>
-        <option value="top">Top</option>
-        <option value="bottom">Bottom</option>
-      </select>
-      <input type="text" placeholder="Type message here" onChange={changeToastMessage} value={toastMessage} />
-      <select onChange={changeToastType} value={toastType}>
-        <option value="success">Success</option>
-        <option value="error">Error</option>
-        <option value="warning">Warning</option>
-        <option value="info">Info</option>
-      </select>
-      <div className={styles.toastDuration}>
+      <div className={styles.toastCreatorOptions}>
+        <h5>Position:</h5>
+        <select onChange={changeVerticalPosition} value={verticalPosition}>
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+        </select>
+        <select onChange={changeHorizontalPosition} value={horizontalPosition}>
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+        </select>
+      </div>
+      <div className={styles.toastCreatorOptions}>
+        <h5>Message:</h5>
+        <input type="text" placeholder="Type message here" onChange={changeToastMessage} value={toastMessage} />
+      </div>
+      <div className={styles.toastCreatorOptions}>
+        <h5>Toast Type:</h5>
+        <select onChange={changeToastType} value={toastType}>
+          <option value="success">Success</option>
+          <option value="error">Error</option>
+          <option value="warning">Warning</option>
+          <option value="info">Info</option>
+        </select>
+      </div>
+      <div className={styles.toastCreatorOptions}>
+        <h5>Toast Duration:</h5>
         <input
           type="range"
           min={1}
@@ -70,9 +79,9 @@ const ToastCreator = ({initialiseToast}:any)  => {
           value={toastDuration}
           onChange={changeToastDuration}
         />
-        <div>{toastDuration} seconds</div>
+        <div className={styles.toastDuration}>{toastDuration} seconds</div>
       </div>
-      <button onClick={createToast}>Show Toast</button>
+      <button className={styles.toastButton} onClick={createToast}>Show Toast</button>
     </div>
   );
 }
