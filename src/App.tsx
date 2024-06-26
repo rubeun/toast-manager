@@ -20,7 +20,13 @@ const App = () => {
         previousToastMessages.filter((msg) => msg.id !== newToast.id),
       );
     }, toastDuration * 1000);
+    return () => clearTimeout(timer);
+  }
 
+  const closeToast = (toastID: number) => {
+    setToastMessages((previousToastMessages) =>
+      previousToastMessages.filter((msg) => msg.id !== toastID),
+    );
   }
 
   return (
@@ -28,7 +34,7 @@ const App = () => {
       <header className="App-header">
         <h1>Toast Manager</h1>
         <ToastCreator initialiseToast={initialiseToast} />
-        <ToastMessage toastMessages={toastMessages} />
+        <ToastMessage toastMessages={toastMessages} closeToast={closeToast} />
       </header>
     </div>
   );
