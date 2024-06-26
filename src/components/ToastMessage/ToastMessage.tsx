@@ -1,13 +1,20 @@
 import styles from "./ToastMessage.module.css";
 import type { Message } from "../../App";
 
-const ToastMessage = ({ toastMessages }: {toastMessages: Message[]}) => {
+const ToastMessage = ({ toastMessages, closeToast }: {toastMessages: Message[], closeToast: any}) => {
 
   const messageDiv = (messageObj: Message, index: number) => {
     return (
       <div className={`${styles[messageObj.type]} ${styles.message}`} key={index}>
         {messageObj.message}
+        <button
+          className={styles.messageButton}
+          onClick={() => closeToast(messageObj.id)}
+        >
+          &#10006;
+        </button>
       </div>
+
     );
   }
 

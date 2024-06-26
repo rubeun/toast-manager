@@ -41,6 +41,17 @@
   background-color: white;
 }
 
+.messageButton {
+  all: unset;
+  color: black;
+  font-size: 0.9rem;
+  /* padding: 0;
+  background-color: transparent;
+  border: none; */
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
 .success {
   background-color: green;
 }
