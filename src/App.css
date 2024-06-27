@@ -1,14 +1,29 @@
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --dark-grey: rgba(0, 0, 0, 0.60);
+  --light-grey: rgb(222, 220, 220);
+  --white: rgba(255, 255, 255, 1);
+  --green: rgb(109, 255, 143);
+  --red: rgb(251, 81, 81);
+  --yellow: rgb(253, 255, 109);
+  --blue: rgb(109, 211, 255);
+  --button: rgb(106, 151, 255);
+  --button-hover: rgb(76, 130, 255);
+  --button-active: rgb(154, 184, 255);
+  --box-shadow: rgba(0, 0, 0, 0.20);
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--light-grey);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--black);
 }

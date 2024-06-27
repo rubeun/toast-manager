@@ -7,10 +7,10 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   border-radius: 1rem;
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .toastCreatorOptions h5{
@@ -18,7 +18,7 @@
 }
 
 .toastDuration {
-  color: black;
+  color: var(--black);
   font-size: 0.8rem;
   padding-top: 0;
 }
@@ -27,15 +27,15 @@
   all: unset;
   border-radius: 6px;
   padding: 0.5rem 2rem;
-  background-color: #6262ff;
-  color: white;
+  background-color: var(--button);
+  color: var(--white);
   cursor: pointer;
 }
 
 .toastButton:hover {
-  background-color: #8d8dfa;
+  background-color: var(--button-hover);
 }
 
 .toastButton:active {
-  background-color: #3535ff;
+  background-color: var(--button-active);
 }

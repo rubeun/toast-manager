@@ -2,7 +2,7 @@
 
 .toastMessage {
   text-align: center;
-  color: black;
+  color: var(--black);
   font-size: 0.8rem;
 }
 
@@ -37,33 +37,30 @@
   margin: 0.2rem 1rem;
   padding: 0.3rem 0.7rem;
   border-radius: 0.3rem;
-  box-shadow: 0 4px 10px #00000040;
-  background-color: white;
+  box-shadow: 0 4px 10px var(--box-shadow);
+  background-color: var(--white);
 }
 
 .messageButton {
   all: unset;
-  color: black;
+  color: var(--black);
   font-size: 0.9rem;
-  /* padding: 0;
-  background-color: transparent;
-  border: none; */
   cursor: pointer;
   margin-left: 0.5rem;
 }
 
 .success {
-  background-color: green;
+  background-color: var(--green);
 }
 
 .error {
-  background-color: red;
+  background-color: var(--red);
 }
 
 .warning {
-  background-color: yellow;
+  background-color: var(--yellow);
 }
 
 .info {
-  background-color: aqua;
+  background-color: var(--blue);
 }
