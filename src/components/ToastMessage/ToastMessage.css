@@ -41,6 +41,62 @@
   background-color: var(--white);
 }
 
+.topLeft .message,
+.bottomLeft .message {
+  animation: slide-in-left 0.5s;
+}
+
+.topRight .message,
+.bottomRight .message {
+  animation: slide-in-right 0.5s;
+}
+
+.topLeft .slideOut,
+.bottomLeft .slideOut {
+  animation: slide-out-left 0.5s;
+}
+
+.topRight .slideOut,
+.bottomRight .slideOut {
+  animation: slide-out-right 0.5s;
+}
+
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
 .messageButton {
   all: unset;
   color: var(--black);
