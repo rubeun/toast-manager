@@ -6,7 +6,7 @@ const ToastCreator = ({ initialiseToast }:any)  => {
   const [verticalPosition, setVerticalPosition] = useState("top");
   const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState("success");
-  const [toastDuration, setToastDuration] = useState(2);
+  const [toastDuration, setToastDuration] = useState(5);
 
   const changeHorizontalPosition = (
     event: React.ChangeEvent<HTMLSelectElement>,
