@@ -20,13 +20,17 @@ const App = () => {
         previousToastMessages.filter((msg) => msg.id !== newToast.id),
       );
     }, toastDuration * 1000);
-    return () => clearTimeout(timer);
   }
 
   const closeToast = (toastID: number) => {
-    setToastMessages((previousToastMessages) =>
-      previousToastMessages.filter((msg) => msg.id !== toastID),
-    );
+    const toastToRemove = document.getElementById(toastID.toString());
+    toastToRemove?.classList.add("slideOut");
+
+    const timer = setTimeout(() => {
+      setToastMessages((previousToastMessages) =>
+        previousToastMessages.filter((msg) => msg.id !== toastID),
+      );
+    }, 500);
   }
 
   return (
