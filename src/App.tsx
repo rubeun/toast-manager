@@ -15,23 +15,17 @@ const App = () => {
 
   const initialiseToast = (newToast: Message, toastDuration: number) => {
     setToastMessages((previousToastMessages) => [...previousToastMessages, newToast]);
-    const timer = setTimeout(() => {
-      setToastMessages((previousToastMessages) =>
-        previousToastMessages.filter((msg) => msg.id !== newToast.id),
-      );
+    setTimeout(() => {
+      closeToast(newToast.id);
     }, toastDuration * 1000);
+    
   }
 
   const closeToast = (toastID: number) => {
-    const toastToRemove = document.getElementById(toastID.toString());
-    toastToRemove?.classList.add("slideOut");
-
-    const timer = setTimeout(() => {
-      setToastMessages((previousToastMessages) =>
-        previousToastMessages.filter((msg) => msg.id !== toastID),
-      );
-    }, 500);
-  }
+    setToastMessages((previousToastMessages) =>
+      previousToastMessages.filter((msg) => msg.id !== toastID),
+    );
+}
 
   return (
     <div className="App">
