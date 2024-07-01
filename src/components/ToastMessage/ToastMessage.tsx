@@ -5,7 +5,7 @@ const ToastMessage = ({ toastMessages, closeToast }: {toastMessages: Message[], 
 
   const messageDiv = (messageObj: Message, index: number) => {
     return (
-      <div className={`${[messageObj.type]} message`} key={index} id={messageObj.id.toString()}>
+      <div className={`${[messageObj.type]} message slideIn`} key={index} id={messageObj.id.toString()}>
         {messageObj.message}
         <button
           className="messageButton"
