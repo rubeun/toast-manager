@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/toast-manager/static/css/main.df426cc6.css",
+    "main.js": "/toast-manager/static/js/main.eee5ae0e.js",
+    "static/js/453.42b61c7e.chunk.js": "/toast-manager/static/js/453.42b61c7e.chunk.js",
+    "index.html": "/toast-manager/index.html",
+    "main.df426cc6.css.map": "/toast-manager/static/css/main.df426cc6.css.map",
+    "main.eee5ae0e.js.map": "/toast-manager/static/js/main.eee5ae0e.js.map",
+    "453.42b61c7e.chunk.js.map": "/toast-manager/static/js/453.42b61c7e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df426cc6.css",
+    "static/js/main.eee5ae0e.js"
+  ]
+}
